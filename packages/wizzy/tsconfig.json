@@ -1,5 +1,5 @@
 {
-  "extends": "@keyranova/typescript-config/base.json",
+  "extends": "@keyranova/typescript-config/react-library.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }

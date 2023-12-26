@@ -1,0 +1,447 @@
+.WizzyTheme__ltr {
+  text-align: left;
+}
+.WizzyTheme__rtl {
+  text-align: right;
+}
+.WizzyTheme__paragraph {
+  margin: 0 0 16px;
+  position: relative;
+}
+.WizzyTheme__quote {
+  margin: 0;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: rgb(101, 103, 107);
+  border-left-color: rgb(206, 208, 212);
+  border-left-width: 4px;
+  border-left-style: solid;
+  padding-left: 16px;
+}
+.WizzyTheme__h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+.WizzyTheme__h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+.WizzyTheme__h3 {
+  font-size: 32px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+.WizzyTheme__h4 {
+  font-size: 28px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+.WizzyTheme__h5 {
+  font-size: 20px;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+.WizzyTheme__h6 {
+  font-size: 18px;
+  margin: 0 0 8px;
+  font-weight: 400;
+}
+.WizzyTheme__indent {
+  --lexical-indent-base-value: 40px;
+}
+.WizzyTheme__textBold {
+  font-weight: bold;
+}
+.WizzyTheme__textItalic {
+  font-style: italic;
+}
+.WizzyTheme__textUnderline {
+  text-decoration: underline;
+}
+.WizzyTheme__textStrikethrough {
+  text-decoration: line-through;
+}
+.WizzyTheme__textUnderlineStrikethrough {
+  text-decoration: underline line-through;
+}
+.WizzyTheme__textSubscript {
+  font-size: 0.8em;
+  vertical-align: sub !important;
+}
+.WizzyTheme__textSuperscript {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+.WizzyTheme__textCode {
+  background-color: rgb(240, 242, 245);
+  padding: 1px 0.25rem;
+  font-family: Menlo, Consolas, Monaco, monospace;
+  font-size: 94%;
+}
+.WizzyTheme__hashtag {
+  background-color: rgba(88, 144, 255, 0.15);
+  border-bottom: 1px solid rgba(88, 144, 255, 0.3);
+}
+.WizzyTheme__link {
+  color: rgb(33, 111, 219);
+  text-decoration: none;
+}
+.WizzyTheme__link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.WizzyTheme__code {
+  background-color: rgb(240, 242, 245);
+  font-family: Menlo, Consolas, Monaco, monospace;
+  display: block;
+  padding: 8px 8px 8px 52px;
+  line-height: 1.53;
+  font-size: 13px;
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  overflow-x: auto;
+  position: relative;
+  tab-size: 2;
+}
+.WizzyTheme__code:before {
+  content: attr(data-gutter);
+  position: absolute;
+  background-color: #eee;
+  left: 0;
+  top: 0;
+  border-right: 1px solid #ccc;
+  padding: 8px;
+  color: #777;
+  white-space: pre-wrap;
+  text-align: right;
+  min-width: 25px;
+}
+.WizzyTheme__table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  table-layout: fixed;
+  width: max-content;
+  margin: 30px 0;
+}
+.WizzyTheme__tableSelection *::selection {
+  background-color: transparent;
+}
+.WizzyTheme__tableSelected {
+  outline: 2px solid rgb(60, 132, 244);
+}
+.WizzyTheme__tableCell {
+  border: 1px solid #bbb;
+  width: 75px;
+  min-width: 75px;
+  vertical-align: top;
+  text-align: start;
+  padding: 6px 8px;
+  position: relative;
+  outline: none;
+}
+.WizzyTheme__tableCellSortedIndicator {
+  display: block;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #999;
+}
+.WizzyTheme__tableCellResizer {
+  position: absolute;
+  right: -4px;
+  height: 100%;
+  width: 8px;
+  cursor: ew-resize;
+  z-index: 10;
+  top: 0;
+}
+.WizzyTheme__tableCellHeader {
+  background-color: #f2f3f5;
+  text-align: start;
+}
+.WizzyTheme__tableCellSelected {
+  background-color: #c9dbf0;
+}
+.WizzyTheme__tableCellPrimarySelected {
+  border: 2px solid rgb(60, 132, 244);
+  display: block;
+  height: calc(100% - 2px);
+  position: absolute;
+  width: calc(100% - 2px);
+  left: -1px;
+  top: -1px;
+  z-index: 2;
+}
+.WizzyTheme__tableCellEditing {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}
+.WizzyTheme__tableAddColumns {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  background-color: #eee;
+  height: 100%;
+  right: -25px;
+  animation: table-controls 0.2s ease;
+  border: 0;
+  cursor: pointer;
+}
+.WizzyTheme__tableAddColumns:after {
+  background-image: url("../assets/plus.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+.WizzyTheme__tableAddColumns:hover {
+  background-color: #c9dbf0;
+}
+.WizzyTheme__tableAddRows {
+  position: absolute;
+  bottom: -25px;
+  width: calc(100% - 25px);
+  background-color: #eee;
+  height: 20px;
+  left: 0;
+  animation: table-controls 0.2s ease;
+  border: 0;
+  cursor: pointer;
+}
+.WizzyTheme__tableAddRows:after {
+  background-image: url("../assets/plus.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+.WizzyTheme__tableAddRows:hover {
+  background-color: #c9dbf0;
+}
+@keyframes table-controls {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.WizzyTheme__tableCellResizeRuler {
+  display: block;
+  position: absolute;
+  width: 1px;
+  background-color: rgb(60, 132, 244);
+  height: 100%;
+  top: 0;
+}
+.WizzyTheme__tableCellActionButtonContainer {
+  display: block;
+  right: 5px;
+  top: 6px;
+  position: absolute;
+  z-index: 4;
+  width: 20px;
+  height: 20px;
+}
+.WizzyTheme__tableCellActionButton {
+  background-color: #eee;
+  display: block;
+  border: 0;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  color: #222;
+  cursor: pointer;
+}
+.WizzyTheme__tableCellActionButton:hover {
+  background-color: #ddd;
+}
+.WizzyTheme__characterLimit {
+  display: inline;
+  background-color: #ffbbbb !important;
+}
+.WizzyTheme__ol1 {
+  padding: 0;
+  margin: 0 0 16px;
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+.WizzyTheme__ol2 {
+  padding: 0;
+  margin: 0;
+  list-style-type: upper-alpha;
+  list-style-position: inside;
+}
+.WizzyTheme__ol3 {
+  padding: 0;
+  margin: 0;
+  list-style-type: lower-alpha;
+  list-style-position: inside;
+}
+.WizzyTheme__ol4 {
+  padding: 0;
+  margin: 0;
+  list-style-type: upper-roman;
+  list-style-position: inside;
+}
+.WizzyTheme__ol5 {
+  padding: 0;
+  margin: 0;
+  list-style-type: lower-roman;
+  list-style-position: inside;
+}
+.WizzyTheme__ul {
+  padding: 0;
+  margin: 0 0 16px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.WizzyTheme__listItem {
+  margin: 0 32px;
+}
+.WizzyTheme__listItemChecked,
+.WizzyTheme__listItemUnchecked {
+  position: relative;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  list-style-type: none;
+  outline: none;
+}
+.WizzyTheme__listItemChecked {
+  text-decoration: line-through;
+}
+.WizzyTheme__listItemUnchecked:before,
+.WizzyTheme__listItemChecked:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  top: 4px;
+  left: 0;
+  cursor: pointer;
+  display: block;
+  background-size: cover;
+  position: absolute;
+}
+.WizzyTheme__listItemUnchecked[dir="rtl"]:before,
+.WizzyTheme__listItemChecked[dir="rtl"]:before {
+  left: auto;
+  right: 0;
+}
+.WizzyTheme__listItemUnchecked:focus:before,
+.WizzyTheme__listItemChecked:focus:before {
+  box-shadow: 0 0 0 2px #a6cdfe;
+  border-radius: 2px;
+}
+.WizzyTheme__listItemUnchecked:before {
+  border: 1px solid #999;
+  border-radius: 2px;
+}
+.WizzyTheme__listItemChecked:before {
+  border: 1px solid rgb(61, 135, 245);
+  border-radius: 2px;
+  background-color: #3d87f5;
+  background-repeat: no-repeat;
+}
+.WizzyTheme__listItemChecked:after {
+  content: "";
+  cursor: pointer;
+  border-color: #fff;
+  border-style: solid;
+  position: absolute;
+  display: block;
+  top: 7px;
+  width: 4px;
+  left: 6px;
+  right: 6px;
+  height: 8px;
+  transform: rotate(45deg);
+  border-width: 0 2px 2px 0;
+}
+.WizzyTheme__nestedListItem {
+  list-style-type: none;
+}
+.WizzyTheme__nestedListItem:before,
+.WizzyTheme__nestedListItem:after {
+  display: none;
+}
+.WizzyTheme__tokenComment {
+  color: slategray;
+}
+.WizzyTheme__tokenPunctuation {
+  color: #999;
+}
+.WizzyTheme__tokenProperty {
+  color: #905;
+}
+.WizzyTheme__tokenSelector {
+  color: #690;
+}
+.WizzyTheme__tokenOperator {
+  color: #9a6e3a;
+}
+.WizzyTheme__tokenAttr {
+  color: #07a;
+}
+.WizzyTheme__tokenVariable {
+  color: #e90;
+}
+.WizzyTheme__tokenFunction {
+  color: #dd4a68;
+}
+.WizzyTheme__mark {
+  background: rgba(255, 212, 0, 0.14);
+  border-bottom: 2px solid rgba(255, 212, 0, 0.3);
+  padding-bottom: 2px;
+}
+.WizzyTheme__markOverlap {
+  background: rgba(255, 212, 0, 0.3);
+  border-bottom: 2px solid rgba(255, 212, 0, 0.7);
+}
+.WizzyTheme__mark.selected {
+  background: rgba(255, 212, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 212, 0, 1);
+}
+.WizzyTheme__markOverlap.selected {
+  background: rgba(255, 212, 0, 0.7);
+  border-bottom: 2px solid rgba(255, 212, 0, 0.7);
+}
+.WizzyTheme__embedBlock {
+  user-select: none;
+}
+.WizzyTheme__embedBlockFocus {
+  outline: 2px solid rgb(60, 132, 244);
+}
+.WizzyTheme__layoutContainer {
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+}
+.WizzyTheme__layoutItem {
+  border: 1px dashed #ddd;
+  padding: 8px 16px;
+}
