@@ -2,7 +2,11 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { $isDecoratorBlockNode } from "@lexical/react/LexicalDecoratorBlockNode"
 import { Dispatch, Fragment, useCallback, useEffect, useState } from "react"
 import { Group, Toolbar } from "react-aria-components"
-import { $isCodeNode, CODE_LANGUAGE_MAP } from "@lexical/code"
+import {
+  $isCodeNode,
+  CODE_LANGUAGE_FRIENDLY_NAME_MAP,
+  CODE_LANGUAGE_MAP,
+} from "@lexical/code"
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link"
 import {
   $isListNode,
@@ -44,7 +48,6 @@ import { IS_APPLE } from "../../utils/environment"
 import { getSelectedNode } from "../../utils/get-selected-node"
 import { sanitizeUrl } from "../../utils/url"
 import { Divider } from "./Divider"
-// import { NumberInput } from "../forms/number-input"
 import { ActionButton } from "./ActionButton"
 import { ActionToggle } from "./ActionToggle"
 import { BlockFormatDropdown } from "./BlockFormatDropdown"
@@ -71,6 +74,20 @@ export const rootTypeToRootName = {
   root: "Root",
   table: "Table",
 }
+
+function getCodeLanguageOptions(): [string, string][] {
+  const options: [string, string][] = []
+
+  for (const [lang, friendlyName] of Object.entries(
+    CODE_LANGUAGE_FRIENDLY_NAME_MAP,
+  )) {
+    options.push([lang, friendlyName])
+  }
+
+  return options
+}
+
+const CODE_LANGUAGE_OPTIONS = getCodeLanguageOptions()
 
 interface WizzyToolbarProps {
   setIsLinkEditMode: Dispatch<boolean>

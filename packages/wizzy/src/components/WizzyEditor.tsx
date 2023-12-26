@@ -15,6 +15,8 @@ import ContentEditable from "./ContentEditable"
 import { Placeholder } from "./Placeholder"
 import TableCellResizer from "../plugins/TableCellResizer"
 import TableActionMenuPlugin from "../plugins/TableActionMenuPlugin"
+import CodeHighlightPlugin from "../plugins/CodeHighlightPlugin"
+import CodeActionMenuPlugin from "../plugins/CodeActionMenuPlugin"
 
 interface WizzyEditorProps {
   isRichText?: boolean
@@ -87,6 +89,7 @@ export const WizzyEditor = ({
               placeholder={placeholder}
               ErrorBoundary={LexicalErrorBoundary}
             />
+            <CodeHighlightPlugin />
             <ListPlugin />
             <CheckListPlugin />
             <TablePlugin hasCellMerge hasCellBackgroundColor />
@@ -96,7 +99,7 @@ export const WizzyEditor = ({
                 {draggableBlocks && (
                   <DraggableBlockPlugin anchorElem={floatingAnchorElem} />
                 )}
-
+                <CodeActionMenuPlugin anchorElem={floatingAnchorElem} />
                 <TableActionMenuPlugin
                   anchorElem={floatingAnchorElem}
                   cellMerge

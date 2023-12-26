@@ -9,10 +9,12 @@ import {
   $createParagraphNode,
   $getSelection,
   $INTERNAL_isPointSelection,
+  $isRangeSelection,
   LexicalEditor,
 } from "lexical"
 import { blockTypeToBlockName } from "./WizzyToolbar"
 import Dropdown, { DropdownButton, DropdownItem } from "./Dropdown"
+import { $createCodeNode } from "@lexical/code"
 
 interface BlockFormatDropdownProps {
   editor: LexicalEditor
@@ -56,6 +58,27 @@ export const BlockFormatDropdown = ({
     }
   }
 
+  const formatCode = () => {
+    if (blockType !== "code") {
+      editor.update(() => {
+        let selection = $getSelection()
+
+        if ($INTERNAL_isPointSelection(selection)) {
+          if (selection.isCollapsed()) {
+            $setBlocksType(selection, () => $createCodeNode())
+          } else {
+            const textContent = selection.getTextContent()
+            const codeNode = $createCodeNode()
+            selection.insertNodes([codeNode])
+            selection = $getSelection()
+            if ($isRangeSelection(selection))
+              selection.insertRawText(textContent)
+          }
+        }
+      })
+    }
+  }
+
   const onSelect = (selection: Key) => {
     switch (selection) {
       case "paragraph":
@@ -63,6 +86,9 @@ export const BlockFormatDropdown = ({
         break
       case "quote":
         formatQuote()
+        break
+      case "code":
+        formatCode()
         break
       default:
         formatHeading(selection as HeadingTagType)
@@ -80,36 +106,76 @@ export const BlockFormatDropdown = ({
       <Label className="wiz-sr-only">Formatting options for text style</Label>
       <DropdownButton />
       <Dropdown>
-        <DropdownItem id="paragraph" icon="Text" textValue="Normal">
+        <DropdownItem
+          id="paragraph"
+          icon="Text"
+          textValue={blockTypeToBlockName["paragraph"]}
+        >
           {blockTypeToBlockName["paragraph"]}
         </DropdownItem>
 
-        <DropdownItem id="h1" icon="Heading1" textValue="Heading 1">
+        <DropdownItem
+          id="h1"
+          icon="Heading1"
+          textValue={blockTypeToBlockName["h1"]}
+        >
           {blockTypeToBlockName["h1"]}
         </DropdownItem>
 
-        <DropdownItem id="h2" icon="Heading2" textValue="Heading 2">
+        <DropdownItem
+          id="h2"
+          icon="Heading2"
+          textValue={blockTypeToBlockName["h2"]}
+        >
           {blockTypeToBlockName["h2"]}
         </DropdownItem>
 
-        <DropdownItem id="h3" icon="Heading3" textValue="Heading 3">
+        <DropdownItem
+          id="h3"
+          icon="Heading3"
+          textValue={blockTypeToBlockName["h3"]}
+        >
           {blockTypeToBlockName["h3"]}
         </DropdownItem>
 
-        <DropdownItem id="h4" icon="Heading4" textValue="Heading 4">
+        <DropdownItem
+          id="h4"
+          icon="Heading4"
+          textValue={blockTypeToBlockName["h4"]}
+        >
           {blockTypeToBlockName["h4"]}
         </DropdownItem>
 
-        <DropdownItem id="h5" icon="Heading5" textValue="Heading 5">
+        <DropdownItem
+          id="h5"
+          icon="Heading5"
+          textValue={blockTypeToBlockName["h5"]}
+        >
           {blockTypeToBlockName["h5"]}
         </DropdownItem>
 
-        <DropdownItem id="h6" icon="Heading6" textValue="Heading 6">
+        <DropdownItem
+          id="h6"
+          icon="Heading6"
+          textValue={blockTypeToBlockName["h6"]}
+        >
           {blockTypeToBlockName["h6"]}
         </DropdownItem>
 
-        <DropdownItem id="quote" icon="Quote" textValue="Quote">
+        <DropdownItem
+          id="quote"
+          icon="Quote"
+          textValue={blockTypeToBlockName["quote"]}
+        >
           {blockTypeToBlockName["quote"]}
+        </DropdownItem>
+
+        <DropdownItem
+          id="code"
+          icon="Code"
+          textValue={blockTypeToBlockName["code"]}
+        >
+          {blockTypeToBlockName["code"]}
         </DropdownItem>
       </Dropdown>
     </Select>
