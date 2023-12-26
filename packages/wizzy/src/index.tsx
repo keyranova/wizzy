@@ -22,7 +22,7 @@ const Wizzy = ({
     ["bold", "italic", "underline", "strikethrough"],
     ["subscript", "superscript", "clear_format"],
     ["alignment"],
-    ["number_list", "bullet_list", "check_list", "table"],
+    ["number_list", "bullet_list", "check_list", "code", "table"],
   ],
 }: WizzyProps) => {
   const initialConfig = {

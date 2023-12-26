@@ -143,7 +143,6 @@ function getMouseInfo(event: MouseEvent): {
   const target = event.target
 
   if (target && target instanceof HTMLElement) {
-    console.log("target", target)
     const codeDOMNode = target.closest<HTMLElement>("code.WizzyTheme__code")
     const isOutside = !(
       codeDOMNode ||

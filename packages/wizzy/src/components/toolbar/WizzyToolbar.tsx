@@ -508,6 +508,18 @@ export const WizzyToolbar = ({
             onPress={formatCheckList}
           />
         )
+      case "code":
+        return (
+          <ActionToggle
+            icon="Code"
+            aria-label="Add inline code"
+            isSelected={isCode}
+            onPress={() => {
+              activeEditor.dispatchCommand(FORMAT_TEXT_COMMAND, "code")
+            }}
+          />
+        )
+        break
       case "table":
         return (
           <DialogButton
